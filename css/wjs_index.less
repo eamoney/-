@@ -1,0 +1,398 @@
+/*定义变量*/
+@baseColor:#e92322;
+
+/*头部块样式*/
+.wjs_header{
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #ccc;
+  .row{
+    height: 100%;
+    text-align: center;
+    > div:nth-of-type(-n+3){
+      border-right: 1px solid #ccc;
+      > .wjs_code{
+        position: relative;
+        display: block;
+        > img{
+          display: none;
+          position: absolute;
+          top: 49px;
+          left: 50%;
+          transform: translateX(-50%);
+          border: 1px solid #ccc;
+          border-top:none;
+          z-index: 999;
+        }
+        &:hover{
+          > img{
+            display: block;
+          }
+        }
+      }
+    }
+    >div:nth-last-of-type(1){
+      > .btn-danger{
+        background-color: @baseColor;
+        border-color: @baseColor;
+      }
+      > .btn{
+        padding:3px 15px;
+      }
+      > .btn-link{
+        color: #333;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+/*导航样式*/
+.wjs_nav{
+  &.navbar{
+    margin-bottom: 0;
+  }
+  .navbar-brand{
+    height: 80px;
+    line-height:50px;
+    > .wjs_icon{
+      font-size: 40px;
+    }
+    > span:first-of-type{
+      color: @baseColor;
+    }
+    > span:last-of-type{
+      color: #333;
+    }
+  }
+  /*修改导航项的样式*/
+  .navbar-nav{
+    > li{
+      > a{
+        line-height: 50px;
+        font-size: 16px;
+      }
+      > a:hover,a:focus{
+        color: #777;
+        border-bottom: 3px solid @baseColor;
+      }
+    }
+    .active{
+      > a,a:hover,a:focus{
+        background-color:transparent;
+        border-bottom: 3px solid @baseColor;
+      }
+    }
+  }
+
+  .navbar-toggle{
+    margin-top:23px;
+  }
+}
+
+/*轮播图样式*/
+.wjs_banner{
+  .mobileImg{
+    width: 100%;
+    display: block;
+  }
+  .mobileImg > img{
+    width: 100%;
+    display: block;
+  }
+  .pcImg{
+    width: 100%;
+    height: 410px;
+    display: block;
+    /*设置背景图片了*/
+
+    /*设置图片居中显示*/
+    background-position: center center;
+    /*设置背景图片的大小*/
+    background-size: cover;
+  }
+}
+//信息块
+.wjs_info{
+  padding: 30px;
+  .wjs_icon{
+    font-size:30px ;
+  }
+  .row>div{
+    margin-top: 20px;
+    >a:hover{
+      color: @baseColor;
+    }
+  }
+
+}
+//预约快
+.wjs_reverse{
+  height: 60px;
+  line-height: 60px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  .wjs_icon{
+    font-size: 18px;
+  }
+  .reverse_now{
+    color: @baseColor;
+    border-bottom: 1px dashed @baseColor;
+  }
+  a:hover{
+    color: @baseColor;
+  }
+}
+//产品快
+.wjs_product{
+  clear: both;
+  background-color: #eee;
+  padding: 20px;
+  .nav-tabs{
+    > li{
+       margin-bottom: 0;
+      padding: 0px 15px;
+      > a{
+            display: block;
+            border:none;
+            line-height: 50px;
+            border-radius: 0  ;
+
+      }
+      >a:hover{
+        border-bottom: 3px solid @baseColor;
+      }
+      &.active{
+        >a,a:hover,a:focus{
+          border:none;
+          border-bottom: 3px solid @baseColor;
+          border-radius: 0 ;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+.wjs_product{
+  .tab-content{
+    .wjs_pBox{
+      height: 150px;
+      margin-top: 20px;
+      background-color: #fff;
+      position: relative;
+      >.wjs_pLeft{
+       margin-right: 100px;
+        height: 150px;
+        padding-top: 10px;
+        font-size: 12px;
+        > p{
+          text-align: center;
+          width: 100%;
+          font-size: 16px;
+        };
+        .row{
+          margin-right: -6px;
+          margin-left: -6px;
+          >div:nth-of-type(even){
+            text-align: right;
+          }
+        }
+      }
+
+      .wjs_pRight{
+        height: 150px;
+        text-align: center;
+        width: 100px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding-top: 30px;
+        border-left: 1px dashed #cccccc;
+        >.wjs_tips{
+          position: absolute;
+          left: 0;
+          top: 20px;
+          width: 100%;
+         >span{
+           cursor: pointer;
+         }
+         > .bao{
+           border: 1px solid @baseColor;
+           color: @baseColor;
+         }
+         >.bei{
+           border: 1px solid deepskyblue;
+           color: deepskyblue;
+         }
+        }
+        > b{
+
+          font-size: 40px;
+          color: @baseColor;
+        }
+        > sub{
+          color: @baseColor;
+          bottom: 0;
+        }
+        &::before,&::after{
+          content: "";
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color:#eee ;
+          position: absolute;
+          left: -5px;
+        }
+        &::before{
+          top: -5px;
+        }
+        &::after{
+          bottom: -5px;
+        }
+      }
+    //  设置当前active的样式
+      &.active{
+        background-color: @baseColor;
+        >.wjs_pRight{
+          >b{
+            color: #fff;
+          }
+          >sub{
+            color: #fff;
+          }
+          >p{
+            color: #fff;
+          }
+        }
+        >.wjs_pLeft{
+          color: #fff;
+          position: relative;
+        }
+        &::before{
+          content: "\e915";
+          font-family: "wjs";
+          position: absolute;
+          left: 0;
+          top:-5px;
+          font-size: 25px;
+          color: #fff;
+
+        }
+      }
+    }
+  }
+}
+//新闻快
+.wjs_news{
+  margin-top: 20px;
+  .row{
+   .wjs_nTitle{
+     line-height: 50px;
+     font-size: 25px;
+     border-bottom: 1px solid #ccc;
+     text-align: center;
+     position:relative;
+     &::before{
+       content: "";
+       height: 10px;
+       width: 10px;
+       border-radius: 50%;
+       border: 1px solid #ccc;
+       position: absolute;
+       right: -10px;
+       top: 45px;
+     }
+   }
+
+  }
+  //添加虚线边框
+  .wjs_newsLine{
+    width: 1px;
+    height: 100%;
+    border-left: 1px dashed @baseColor;
+    position: absolute;
+    left: 43px;
+    top: 0;
+  }
+  .nav-tabs{
+    border-bottom: none;
+    position: relative;
+    /*使用伪元素添加虚线:伪元素必须要求父元素有具体的宽高值。所谓具体的宽高值是指在样式中设置了width/height*/
+    /*&::before{
+      content: "";
+      width: 1px;
+      height: 100%;
+      position: absolute;
+      border-left: 1px solid @baseColor;
+      left: 0;
+      top:0;
+    }*/
+    > li {
+      margin-bottom:60px;
+      > a{
+        background-color: #ccc;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+      }
+      > a:hover{
+        border: none;
+        background-color: @baseColor;
+      }
+      &.active{
+        > a, a:hover, a:focus{
+          border: none;
+          background-color: @baseColor;
+        }
+      }
+      .wjs_icon{
+        font-size: 30px;
+        color: #fff;
+      }
+    }
+    > li:last-of-type{
+      margin-bottom: 0px;
+    }
+    /*使用媒体查询设置w在768~992之间的li元素的样式*/
+    @media screen and (min-width: 768px) and (max-width: 992px){
+      > li {
+        margin:20px 30px;
+      }
+    }
+    /*使用媒体查询设置w<768时li元素的样式*/
+    @media screen  and (max-width: 768px){
+      > li {
+        margin:20px 0px;
+        width: 25%;
+      }
+    }
+  }
+  .wjs_newslist{
+    >li{
+      list-style: none;
+      line-height: 60px;
+
+    }
+  }
+}
+//合作伙伴
+.wjs_partner{
+  text-align: center;
+  background-color: #eee;
+   h3{
+     text-align: center;
+     margin-top: 40px;
+   }
+  ul{
+    display: inline-block;
+   > li{
+     list-style: none;
+     float: left;
+     font-size: 80px;
+     margin-left: 20px;
+    }
+  }
+}
